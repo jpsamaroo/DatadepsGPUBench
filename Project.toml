@@ -1,0 +1,9 @@
+[deps]
+AMDGPU = "21141c5a-9bdb-4563-92ae-f87d6854732e"
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+Dagger = "d58978e5-989f-55fb-8d15-ea34adc7bf54"
+DaggerGPU = "68e73e28-2238-4d5a-bf97-e5d4aa3c4be2"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Tables = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
