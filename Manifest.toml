@@ -204,7 +204,7 @@ version = "0.18.12"
 
 [[deps.DaggerGPU]]
 deps = ["Adapt", "Dagger", "Distributed", "KernelAbstractions", "LinearAlgebra", "MemPool", "Requires", "UUIDs"]
-git-tree-sha1 = "8841478635b6d1ab38bdbfae4d2e204932c04813"
+git-tree-sha1 = "408e08dc9359c2a1efffe9c09e0f44c7b534f5c4"
 repo-rev = "jps/unsafe-free"
 repo-url = "https://github.com/JuliaGPU/DaggerGPU.jl.git"
 uuid = "68e73e28-2238-4d5a-bf97-e5d4aa3c4be2"

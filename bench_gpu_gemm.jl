@@ -47,22 +47,15 @@ end
 
 #size, block, ib, threads, time_dagger, time_blas, flops, gflops, gflops/seonds_dagger, gflops/second s_blas, speedup BLAS/Dagger, speedup Dagger/BLAS
 function gemm_bench(T)
-    #=
     n_small = [1024, 2048, 4096, 8192, 10240]
     n_large = [20480, 40960, 61440, 81920, 102400]
     nb_small=[1024, 2048, 4096]
     nb_large=[4096, 5120, 6144]
     task_window = [128, 256, 512, 1024]
-    =#
-    n_small = [1024, 2048, 4096, 8192, 10240]
-    #n_large = [20480, 40960, 61440, 81920, 102400]
-    nb_small=[1024, 2048, 4096]
-    #nb_large=[4096, 5120, 6144]
-    task_window = [4, 8]
 
     p = 1 # Subdomains only in caqr
     rows = length(n_small)*length(nb_small)*length(task_window)
-    #rows += length(n_large)*length(nb_large)*length(task_window)
+    rows += length(n_large)*length(nb_large)*length(task_window)
     timing = zeros(rows, 13)
     counter=1
     # mat = N
@@ -99,7 +92,6 @@ function gemm_bench(T)
                             Base.with(Dagger.DATADEPS_REGION_SPLIT=>k,
                                   Dagger.DATADEPS_SCHEDULER=>:roundrobin) do
                                   t[r]=@belapsed mul!($DC, $DA, $DA)
-                                  #@show t
                             end
                         end
                     end
@@ -123,7 +115,6 @@ function gemm_bench(T)
         end
     end
 
-    #=
     for i in n_large
         for j in nb_large
             if j<=i
@@ -179,7 +170,6 @@ function gemm_bench(T)
             end
         end
     end
-    =#
     return timing
 end
 T = [Float32, #=Float64=#]
