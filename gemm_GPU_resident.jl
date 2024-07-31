@@ -20,7 +20,7 @@ else
     error("Unknown platform $platform\nSupported platforms are: CUDA, AMDGPU")
 end
 
-using MKL
+#using MKL
 using LinearAlgebra
 using BenchmarkTools
 using CSV, Tables
