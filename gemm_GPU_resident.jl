@@ -48,11 +48,11 @@ function gemm_bench(T)
 
 
     n_small = []
-    n_large =[61440]
+    n_large =[40960]
     n_ = 4096
     nb_small=[1024, 2048, 4096]
-    nb_large=[6144]
-    task_window = [512, 1024]
+    nb_large=[5120]
+    task_window = [512]
     p = 1 # Subdomains only in caqr
     rows = length(n_small)*length(nb_small)*length(task_window)+length(n_large)*length(nb_large)*length(task_window)
     timing = zeros(rows, 13)
