@@ -109,7 +109,7 @@ function gemm_bench(T)
                     timing[counter, 12] = timing[counter, 7] / timing[counter, 6]; #speedup
                     timing[counter, 13] = timing[counter, 6] / timing[counter, 7]; #speeddwon
                     display(transpose(timing[counter, :]))
-                    CSV.write("timing_gemm_gpu_$(T).csv",  Tables.table(transpose(timing[counter,:])), writeheader=false, append=true)
+                    CSV.write("timing_gemm_cpu_$(T).csv",  Tables.table(transpose(timing[counter,:])), writeheader=false, append=true)
                     counter+=1
                 end
             end
@@ -165,7 +165,7 @@ function gemm_bench(T)
                     timing[counter, 12] = timing[counter, 7] / timing[counter, 6]; #speedup
                     timing[counter, 13] = timing[counter, 6] / timing[counter, 7]; #speeddwon
                     display(transpose(timing[counter, :]))
-                    CSV.write("timing_gemm_gpu_$(T).csv",  Tables.table(transpose(timing[counter,:])), writeheader=false, append=true)
+                    CSV.write("timing_gemm_cpu_$(T).csv",  Tables.table(transpose(timing[counter,:])), writeheader=false, append=true)
                     counter+=1
                 end
             end
